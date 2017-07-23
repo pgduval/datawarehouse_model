@@ -4,8 +4,8 @@
  <print-settings numCopies="1" zoom="1.0" pageNumbersPrinted="true" orientation="1" paperWidth="612.0" paperHeight="792.0" leftBorder="50.0" rightBorder="50.0" topBorder="50.0" bottomBorder="50.0" />
  <project-data-sources>
   <data-source id="DS0">
+   <property key="Logical" value="datawarehouse" />
    <property key="Connection Type" value="MySQL" />
-   <property key="Logical" value="PlayPen Database" />
    <property key="JDBC URL" value="jdbc:mysql://localhost:3306/datawarehouse" />
    <property key="UID" value="datawarehouse" />
    <property key="PWD" value="datawarehouse" />
@@ -16,8 +16,8 @@
    <property key="ca.sqlpower.architect.etl.kettle.repos.password" value="" />
   </data-source>
   <data-source id="DS0">
+   <property key="Logical" value="datawarehouse" />
    <property key="Connection Type" value="MySQL" />
-   <property key="Logical" value="PlayPen Database" />
    <property key="JDBC URL" value="jdbc:mysql://localhost:3306/datawarehouse" />
    <property key="UID" value="datawarehouse" />
    <property key="PWD" value="datawarehouse" />
@@ -29,7 +29,7 @@
   </data-source>
  </project-data-sources>
  <source-databases>
-  <database id="DB0" populated="true" UUID="9444200e-69be-4b68-8b4b-7f7623e9e327" dbcs-ref="DS0" name="PlayPen Database" physicalName="datawarehouse" >
+  <database id="DB0" populated="true" UUID="9444200e-69be-4b68-8b4b-7f7623e9e327" dbcs-ref="DS0" name="datawarehouse" physicalName="datawarehouse" >
    <catalog id="CAT1" populated="false" UUID="8fefb90d-80cc-4c00-96c9-f9347f4dbb9b" name="information_schema" nativeTerm="database" physicalName="information_schema" >
    </catalog>
    <catalog id="CAT2" populated="false" UUID="2df25668-1ef8-4f6c-a4fc-24e7714ea768" name="datawarehouse" nativeTerm="database" physicalName="datawarehouse" >
@@ -105,24 +105,52 @@
     </index>
    </folder>
   </table>
+  <table id="TAB21" populated="true" UUID="94bc45cf-2eeb-4f58-aaea-cbafef297f48" name="fact2" objectType="TABLE" physicalName="fact2" >
+   <remarks></remarks>
+   <folder id="FOLTAB211" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL22" populated="true" UUID="1c302cce-2915-4911-a5e1-8d15509e429e" autoIncrement="true" autoIncrementSequenceName="fact2_id_fact1_seq" defaultValue="" name="id_fact1" nullable="0" physicalName="id_fact1" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL23" populated="true" UUID="d58eb15a-0025-477e-b671-7a4af2ae5d93" autoIncrement="false" autoIncrementSequenceName="dim2_id_dim2_seq" defaultValue="" name="id_dim2" nullable="0" physicalName="id_dim2" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL24" populated="true" UUID="0e2bd164-edf0-4163-9612-4cd21c593a0b" autoIncrement="false" autoIncrementSequenceName="fact2_metric2_seq" defaultValue="" name="metric2" nullable="0" physicalName="metric2" precision="11" referenceCount="1" scale="2" sourceDataTypeName="UserDefinedSQLType" type="2" userDefinedTypeUUID="115245ce-612c-4d6a-b559-6dd903dd959a" >
+     <remarks></remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB213" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB212" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB214" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX25" populated="true" UUID="2c8fa5f7-6ed3-446c-8635-a16bdc49bda2" clustered="false" name="id_fact2" physicalName="id_fact2" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC26" populated="true" UUID="1a111ce0-b057-4ee6-b614-5a56e31b0a4b" ascendingOrDescending="UNSPECIFIED" column-ref="COL22" name="id_fact1" physicalName="id_fact1" />
+    </index>
+   </folder>
+  </table>
   <relationships>
-   <relationship id="REL21" populated="true" UUID="2e8741fc-d5af-4efd-8e0d-40edf30f1bfb" deferrability="7" deleteRule="3" fk-table-ref="TAB4" fkCardinality="7" identifying="false" name="dim2_fact1_fk" physicalName="dim2_fact1_fk" pk-table-ref="TAB11" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP22" populated="true" UUID="c6950fcf-f5fd-4c83-8277-d67b29ed76f9" fk-column-ref="COL7" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL12" />
+   <relationship id="REL27" populated="true" UUID="2e8741fc-d5af-4efd-8e0d-40edf30f1bfb" deferrability="7" deleteRule="3" fk-table-ref="TAB4" fkCardinality="7" identifying="false" name="dim2_fact1_fk" physicalName="dim2_fact1_fk" pk-table-ref="TAB11" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP28" populated="true" UUID="c6950fcf-f5fd-4c83-8277-d67b29ed76f9" fk-column-ref="COL7" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL12" />
    </relationship>
-   <relationship id="REL23" populated="true" UUID="c1324aba-a361-45d4-b843-63b93ec10fc4" deferrability="7" deleteRule="3" fk-table-ref="TAB4" fkCardinality="7" identifying="false" name="dim1_fact1_fk" physicalName="dim1_fact1_fk" pk-table-ref="TAB16" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP24" populated="true" UUID="bc929e88-722e-414e-9570-e8fa3bb5335d" fk-column-ref="COL6" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL17" />
+   <relationship id="REL29" populated="true" UUID="bd2f2317-e386-4463-b5c8-826019390686" deferrability="7" deleteRule="3" fk-table-ref="TAB21" fkCardinality="7" identifying="false" name="dim2_fact2_fk" physicalName="dim2_fact2_fk" pk-table-ref="TAB11" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP30" populated="true" UUID="81944d43-813b-40ec-b900-291a00483faf" fk-column-ref="COL23" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL12" />
+   </relationship>
+   <relationship id="REL31" populated="true" UUID="c1324aba-a361-45d4-b843-63b93ec10fc4" deferrability="7" deleteRule="3" fk-table-ref="TAB4" fkCardinality="7" identifying="false" name="dim1_fact1_fk" physicalName="dim1_fact1_fk" pk-table-ref="TAB16" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP32" populated="true" UUID="bc929e88-722e-414e-9570-e8fa3bb5335d" fk-column-ref="COL6" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL17" />
    </relationship>
   </relationships>
  </target-database>
- <ddl-generator type="ca.sqlpower.architect.ddl.MySqlDDLGenerator" allow-connection="true" target-catalog="datawarehouse"> </ddl-generator>
+ <ddl-generator type="ca.sqlpower.architect.ddl.MySqlDDLGenerator" allow-connection="false" target-catalog="datawarehouse"> </ddl-generator>
  <liquibase-settings useSeparateChangeSets="false" generateId="false" idStart="1"/>
  <create-kettle-job-settings filePath="" jobName="" schemaName="" kettleJoinType="0" savingToFile="true" />
- <play-pen zoom="1.0" viewportX="0" viewportY="0" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
+ <play-pen zoom="0.5946035575013604" viewportX="0" viewportY="0" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
   <table-pane table-ref="TAB4" x="324" y="235" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
-  <table-pane table-ref="TAB11" x="649" y="362" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
-  <table-pane table-ref="TAB16" x="21" y="385" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
-  <table-link relationship-ref="REL23" pkConnection="0.5362318840579711" fkConnection="0.4666666666666667" rLineColor="0x4c4c4c" pkLabelText="" fkLabelText="" orientation="33"/>
-  <table-link relationship-ref="REL21" pkConnection="0.5797101449275363" fkConnection="0.42857142857142855" rLineColor="0x4c4c4c" pkLabelText="" fkLabelText="" orientation="18"/>
+  <table-pane table-ref="TAB11" x="640" y="146" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB16" x="24" y="148" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB21" x="972" y="260" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-link relationship-ref="REL31" pkConnection="0.5362318840579711" fkConnection="0.4666666666666667" rLineColor="0x4c4c4c" pkLabelText="" fkLabelText="" orientation="33"/>
+  <table-link relationship-ref="REL27" pkConnection="0.5797101449275363" fkConnection="0.42857142857142855" rLineColor="0x4c4c4c" pkLabelText="" fkLabelText="" orientation="18"/>
+  <table-link relationship-ref="REL29" pkConnection="0.855072463768116" fkConnection="0.14492753623188406" rLineColor="0x4c4c4c" pkLabelText="" fkLabelText="" orientation="33"/>
  </play-pen>
  <critic-manager>
   <critic-grouping platformType="Generic" enabled="true">

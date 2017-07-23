@@ -13,6 +13,14 @@ CREATE TABLE dim2 (
 );
 
 
+CREATE TABLE fact2 (
+                id_fact1 INT AUTO_INCREMENT NOT NULL,
+                id_dim2 INT NOT NULL,
+                metric2 NUMERIC(11,2) NOT NULL,
+                PRIMARY KEY (id_fact1)
+);
+
+
 CREATE TABLE fact1 (
                 id_fact1 INT AUTO_INCREMENT NOT NULL,
                 id_dim1 INT NOT NULL,
@@ -29,6 +37,12 @@ ON DELETE NO ACTION
 ON UPDATE NO ACTION;
 
 ALTER TABLE fact1 ADD CONSTRAINT dim2_fact1_fk
+FOREIGN KEY (id_dim2)
+REFERENCES dim2 (id_dim2)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION;
+
+ALTER TABLE fact2 ADD CONSTRAINT dim2_fact2_fk
 FOREIGN KEY (id_dim2)
 REFERENCES dim2 (id_dim2)
 ON DELETE NO ACTION
